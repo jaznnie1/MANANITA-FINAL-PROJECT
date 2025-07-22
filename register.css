@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+:root {
+  --neon: #00ffff;
+  --bg: #1a1a1a;
+  --panel: #222;
+  --accent: #ff00ff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--neon);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background: var(--panel);
+  padding: 40px;
+  border: 4px solid var(--neon);
+  box-shadow: 0 0 20px var(--neon);
+  width: 350px;
+  text-align: center;
+  position: relative;
+}
+
+form h2 {
+  font-size: 0.75rem;
+  color: var(--neon);
+  margin-bottom: 2rem;
+}
+
+.inputBox {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  background: #111;
+  color: var(--neon);
+  border: 2px solid var(--neon);
+  outline: none;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
+.inputBox label {
+  display: block;
+  font-size: 0.5rem;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+.inputBox input[type="submit"] {
+  background: var(--neon);
+  color: #000;
+  font-size: 0.6rem;
+  border: 2px solid #fff;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.inputBox input[type="submit"]:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+form p {
+  color: var(--neon);
+  font-size: 0.45rem;
+  margin-top: 1rem;
+}
+
+form p a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+form::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px dashed var(--accent);
+  z-index: -1;
+  animation: glitch 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(1px, -1px); }
+  100% { transform: translate(0px, 0px); }
+}
